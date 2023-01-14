@@ -1,48 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
+
+* { 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body { 
+    margin: 0; 
+    padding: 0; 
+    font-size: 15px; 
+    /* ^ 15px rem base number for type scaling*/
+    color: white;
+    background-color: #222222;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1.1;
+}
+
+body,
+input,
+button,
+select,
+textarea {
+    font: 600 1rem 'Poppins'; 
+    color: white}
+
+a { text-decoration: none; }
+a:link { color: #6A26CD; }
+a:hover { color: #431488; }
+a:active { color: #6A26CD; }
+a:visited { color: #6A26CD; }
+
+html, body, #root { height: 100%; }
+
+ul, ol { margin: 0 0 1rem; padding: 0 0 0 1rem; }
+
+table { border-collapse: collapse; }
+th { text-align: left; border-bottom: 1px solid white; }
+td { vertical-align: middle; }
+
+table:not(th){
+    font-weight: 200;
+}
+
+/* End resets */
+
 body {
-    min-height: 100vh;
-    display: flex;
+    /* min-height: 100vh;
+    min-width: 100vw; */
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-}
-.diagonal-section {
-    /* Used to position the diagonal area */
-    position: relative;
-
+    align-items: center; */
 }
 
-.diagonal-section__diagonal {
-    /* Absolute position */
-    left: 0px;
-    position: relative;
-    top: 0px;
+.sticky-sections {
+    height: 100%;
+    overflow: scroll;
+}
 
+.sticky-sections__section {
     /* Take full size */
     height: 100%;
-    min-width: 30vw;
+    width: 100%;
 
-    /* Create diagonal sides */
-    transform: skewY(-5deg);
-
-    /* Background color */
-    background-color: #d1d5db;
-
-    /* Displayed under the main content */
-    z-index: -1;
-
-    height: 50vh;
+    /* Stick to the top */
+    position: sticky;
+    top: 0;
+    background-color: gray;
+    height: 33vh;
     background-image: url(/images/flower1.png);
     display: flex;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    background-repeat: none;
+
     padding: 10rem 0;
     margin: 10rem 0;
 }
 
-/* #container-one {
-    background-image: url(/images/flower1.png);
+.message-contianer{
     display: flex;
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-} */
+    width: 100%;
+    /* background-color: gray; */
+}
+
+.message-item{
+    width: 50%;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+    margin: 5rem;
+}
+button{
+    background-color: transparent;
+    outline: 1px solid white;
+    padding: 1rem 2rem;
+    box-shadow: none;
+    border: none;
+}
+
+
+.card-layout {
+    display: flex;
+    /* height: 5rem;
+    width: 5rem; */
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.card-layout__item {
+    /* There will be 3 cards per row */
+    flex-basis: 33.33333%;
+    height: auto;
+    width: 29vw;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    background-color: aqua;
+}
+
+
+@media screen and (max-width: 900px) {
+    .message-contianer{
+    flex-direction: column;
+    margin: 2rem 0;
+    align-items: center;
+    }
+    .message-item{
+    flex-direction: column;
+    margin: 2rem 0;
+    }
+
+    .card-layout__item {
+        margin-top: 5rem;
+    }
+}
