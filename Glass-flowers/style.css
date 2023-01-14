@@ -1,0 +1,48 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diagonal-section {
+    /* Used to position the diagonal area */
+    position: relative;
+
+}
+
+.diagonal-section__diagonal {
+    /* Absolute position */
+    left: 0px;
+    position: relative;
+    top: 0px;
+
+    /* Take full size */
+    height: 100%;
+    min-width: 30vw;
+
+    /* Create diagonal sides */
+    transform: skewY(-5deg);
+
+    /* Background color */
+    background-color: #d1d5db;
+
+    /* Displayed under the main content */
+    z-index: -1;
+
+    height: 50vh;
+    background-image: url(/images/flower1.png);
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    padding: 10rem 0;
+    margin: 10rem 0;
+}
+
+/* #container-one {
+    background-image: url(/images/flower1.png);
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+} */
